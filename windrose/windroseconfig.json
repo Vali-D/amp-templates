@@ -1,31 +1,106 @@
-{
-  "Name": "Windrose Dedicated Server",
-  "Description": "Windrose server via AMP (SteamCMD)",
-  "Version": "1.0",
-  "Author": "Kim",
-  "SupportedPlatforms": [ "Windows" ],
-  "InstanceType": "Generic",
-  "ContainerPolicy": "Standalone",
-
-  "AppSettings": {
-    "MaxPlayers": 8
-  },
-
-  "Ports": [
+[
     {
-      "Name": "Game Port (Not strictly used)",
-      "Port": "7777",
-      "Protocol": "UDP"
+        "DisplayName": "PersistentServerId",
+        "Category": "",
+        "Description": "Unique ID of your server. Do not edit this. *Note: This system is subject to change in upcoming builds.*",
+        "Keywords": "",
+        "FieldName": "PersistentServerId",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "PersistentServerId",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "InviteCode",
+        "Category": "",
+        "Description": "The custom invite code players use to find and join your server. It must be a minimum of 6 characters (using 0-9, a-z, A-Z) and is case-sensitive.",
+        "Keywords": "",
+        "FieldName": "InviteCode",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "InviteCode",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "IsPasswordProtected",
+        "Category": "",
+        "Description": "Specify if a password is required to join the server. Set to true or false.",
+        "Keywords": "",
+        "FieldName": "IsPasswordProtected",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "IsPasswordProtected",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "false",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Password",
+        "Category": "",
+        "Description": "The password required to join (if IsPasswordProtected is set to true).",
+        "Keywords": "",
+        "FieldName": "Password",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "Password",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "ServerName",
+        "Category": "",
+        "Description": "The display name of your server. This is especially helpful for players to verify they are joining the right place if invite codes look similar.",
+        "Keywords": "",
+        "FieldName": "ServerName",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "ServerName",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "WorldIslandId(What world to load)",
+        "Category": "",
+        "Description": "The ID of the currently selected world that will load on server start. This must match the identical field inside your chosen WorldDescription.json file.",
+        "Keywords": "",
+        "FieldName": "WorldIslandId",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "WorldIslandId",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "MaxPlayerCount",
+        "Category": "",
+        "Description": "The maximum number of simultaneous players allowed. Up to 4 players is highly recommended for smooth performance. Going beyond this limit may negatively impact server stability, especially during late-game encounters.",
+        "Keywords": "",
+        "FieldName": "MaxPlayerCount",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "MaxPlayerCount",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "4",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "P2pProxyAddress",
+        "Category": "",
+        "Description": "The IP address used for listening sockets.",
+        "Keywords": "",
+        "FieldName": "P2pProxyAddress",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "P2pProxyAddress",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
     }
-  ],
-
-  "Deployment": {
-    "CommandLine": "StartServerForeground.bat",
-    "WorkingDirectory": "./"
-  },
-
-  "FileManagerPlugin": {
-    "UpdateSource": "SteamCMD",
-    "AppID": "4129620"
-  }
-}
+]
