@@ -1,0 +1,31 @@
+{
+  "Name": "Windrose Dedicated Server",
+  "Description": "Windrose server via AMP (SteamCMD)",
+  "Version": "1.0",
+  "Author": "Kim",
+  "SupportedPlatforms": [ "Windows" ],
+  "InstanceType": "Generic",
+  "ContainerPolicy": "Standalone",
+
+  "AppSettings": {
+    "MaxPlayers": 8
+  },
+
+  "Ports": [
+    {
+      "Name": "Game Port (Not strictly used)",
+      "Port": "7777",
+      "Protocol": "UDP"
+    }
+  ],
+
+  "Deployment": {
+    "CommandLine": "StartServerForeground.bat",
+    "WorkingDirectory": "./"
+  },
+
+  "FileManagerPlugin": {
+    "UpdateSource": "SteamCMD",
+    "AppID": "4129620"
+  }
+}
